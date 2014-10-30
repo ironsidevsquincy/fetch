@@ -170,6 +170,11 @@
       var xhr = new XMLHttpRequest()
 
       xhr.onload = function() {
+        if (xhr.status > 12000) {
+          // IE codes for various connection errors
+          reject()
+          return
+        }
         var options = {
           status: xhr.status,
           statusText: xhr.statusText,
