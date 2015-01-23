@@ -1,5 +1,8 @@
 (function() {
   'use strict';
+  if (typeof global !== 'undefined') {
+    var self = global.self;
+  }
 
   if (self.fetch) {
     return
